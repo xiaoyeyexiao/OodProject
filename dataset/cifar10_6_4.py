@@ -38,7 +38,7 @@ def get_cifar10(args, root):
     # for test
     test_dataset = datasets.CIFAR10(root, train=False, download=True)
 
-    #move class "plane" and "car" to label 8 and 9
+    # move class "plane" and "car" to label 8 and 9
     base_dataset.targets = (np.array(base_dataset.targets) - 2)
     test_dataset.targets = (np.array(test_dataset.targets) - 2)
     (base_dataset.targets)[np.where((base_dataset.targets) == -2)] = 8
